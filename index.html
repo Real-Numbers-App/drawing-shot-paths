@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Real Numbers | Shot Paths</title>
+    <script src="https://kit.fontawesome.com/ab82018e1c.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.3.1/d3.min.js" integrity="sha512-9H86d5lhAwgf2/u29K4N5G6pZThNOojI8kMT4nT4NHvVR02cM85M06KJRQXkI0XgQWBpzQyIyr8LVomyu1AQdw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="app.css">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7N330LF3BZ');
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-container">
+        <h3>Sketch the shot path of the ball on the two empty graphs below.</h3>
+        <p>The whole duration of the shot is 4.2 seconds.</p>
+        <p>Watch the video of the shot <a href="https://www.youtube.com/watch?v=K42-D8QPnok" target="_blank">here</a>.</p>
+      </div>
+      <div class="controls-container">
+        <div class="radio-buttons-wrapper">
+          <input type="radio" class="radio-button" name="radioButtonTest" value="1" id="button1" checked  />
+          <label for="button1" onclick="use_tool('draw')"><i class="fas fa-pencil-alt"></i></label>
+          <input type="radio" class="radio-button" name="radioButtonTest" value="2" id="button2" />
+          <label for="button2" onclick="use_tool('erase');"><i class="fas fa-eraser"></i></label>
+        </div>
+        <div id="player">
+          <input type="button" id="btn" value="▶" class="play-button" />
+          <input class="slider-color" type="range" id="xpos" min="0" value="0" max="320" step="1">
+        </div>
+      </div>
+      <div class="chart-container">
+        <div class="wrapper">
+          <div class="chart-wrapper">
+            <canvas id="myChart" width="380" height="380"></canvas>
+            <div id="heightGraph"></div>
+            <canvas id="line"></canvas>
+          </div>
+          <canvas id="draw"></canvas>
+        </div>
+        <div class="wrapper">
+          <div class="chart-wrapper">
+            <div id="distanceGraph"></div>
+              <canvas id="line2"></canvas>
+            </div>
+            <canvas id="draw2"></canvas>
+          </div>
+        </div>
+        <div class="wrapper-2">
+          <canvas id="animation"></canvas>
+          <div id="grid"></div>
+        </div>
+        <a href="https://a.espncdn.com/photo/2019/0513/r542285_2_1296x729_16-9.jpg" target="_blank"><small>Image Reference</small></a>
+        <a href="https://www.espn.com/nba/story/_/id/26735155/kawhi-ousts-sixers-unprecedented-shot" target="_blank"><small>Story Reference</small></a>
+      </div>
+    </body>
+    <script src="animation.js"></script>
+    <script src="imageOverlayGrid.js"></script>
+    <script src="heightGraph.js"></script>
+    <script src="distanceGraph.js"></script>
+  </body>
+</html>
